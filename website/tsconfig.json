@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"target": "ESNext",
+		"jsx": "react",
+		"allowImportingTsExtensions": false,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"sourceMap": true,
+		"declaration": true,
+		"allowJs": true,
+		"checkJs": true,
+		"rootDir": "src",
+		"outDir": "out"
+	},
+	"exclude": [
+		"node_modules",
+		"**/node_modules/*"
+	], 
+	"include": [
+		"src"
+	]
+}
