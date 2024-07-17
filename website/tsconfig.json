@@ -9,6 +9,7 @@
 		"strictFunctionTypes": true,
 		"sourceMap": true,
 		"declaration": true,
+		"alwaysStrict": true,
 		"allowJs": true,
 		"checkJs": true,
 		"rootDir": "src",
