@@ -3,7 +3,7 @@ import 'codemirror/keymap/vim';
 import 'codemirror/keymap/emacs';
 import 'codemirror/keymap/sublime';
 import PropTypes from 'prop-types';
-import {subscribe, clear} from '../utils/pubsub.js';
+import {subscribe, clear} from '../utils/pubsub';
 import React from 'react';
 
 const defaultPrettierOptions = {

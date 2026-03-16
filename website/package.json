@@ -117,6 +117,8 @@
     "lucene": "^2.1.1",
     "mathjs": "^10.6.1",
     "meriyah": "^4.2.0",
+    "monaco-editor": "^0.55.1",
+    "monaco-editor-webpack-plugin": "^7.1.1",
     "parse5": "^6.0.0",
     "parse5-htmlparser2-tree-adapter": "^6.0.0",
     "pbkit": "^0.0.38",

@@ -172,7 +172,7 @@ module.exports = Object.assign({
         type: 'javascript/auto',
       },
       {
-        test: /\.(jsx?|mjs)$/,
+        test: /\.([jt]sx?|mjs)$/,
         type: 'javascript/auto',
         include: [
           // To transpile our version of acorn as well as the one that
@@ -281,6 +281,10 @@ module.exports = Object.assign({
   },
 
   plugins: plugins,
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.mjs', '.js', '.jsx', '.json'],
+  },
 
   entry: {
     app: './src/app.js',

@@ -1,8 +1,8 @@
 import Element from './tree/Element';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {publish} from '../../utils/pubsub.js';
-import {treeAdapterFromParseResult} from '../../core/TreeAdapter.js';
+import {publish} from '../../utils/pubsub';
+import {treeAdapterFromParseResult} from '../../core/TreeAdapter';
 import {SelectedNodeProvider} from './SelectedNodeContext.js';
 import focusNodes from './focusNodes.js'
 

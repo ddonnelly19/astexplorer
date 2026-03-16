@@ -6,7 +6,7 @@ import GistBanner from './components/GistBanner';
 import LoadingIndicatorContainer from './containers/LoadingIndicatorContainer';
 import PasteDropTargetContainer from './containers/PasteDropTargetContainer';
 import PropTypes from 'prop-types';
-import {publish} from './utils/pubsub.js';
+import {publish} from './utils/pubsub';
 import * as React from 'react';
 import SettingsDialogContainer from './containers/SettingsDialogContainer';
 import ShareDialogContainer from './containers/ShareDialogContainer';
@@ -25,9 +25,9 @@ import * as parse from './storage/parse';
 import StorageHandler from './storage';
 import '../css/style.css';
 import parserMiddleware from './store/parserMiddleware';
-import snippetMiddleware from './store/snippetMiddleware.js';
+import snippetMiddleware from './store/snippetMiddleware';
 import transformerMiddleware from './store/transformerMiddleware';
-import cx from './utils/classnames.js';
+import cx from './utils/classnames';
 
 function resize() {
   publish('PANEL_RESIZE');

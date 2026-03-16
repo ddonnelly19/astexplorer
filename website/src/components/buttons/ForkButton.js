@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import cx from '../../utils/classnames.js';
+import cx from '../../utils/classnames';
 
 export default class ForkButton extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import Editor from './Editor';
 import JSCodeshiftEditor from './JSCodeshiftEditor';
 import PropTypes from 'prop-types';
-import {publish} from '../utils/pubsub.js';
+import {publish} from '../utils/pubsub';
 import * as React from 'react';
 import SplitPane from './SplitPane';
 import TransformOutput from './TransformOutput';

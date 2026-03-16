@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import cx from '../utils/classnames.js';
+import cx from '../utils/classnames';
 
 const baseStyle = {
   flex: '1',

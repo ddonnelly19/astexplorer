@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import cx from '../../utils/classnames.js';
+import cx from '../../utils/classnames';
 
 const keyMappings = ['default', 'vim', 'emacs', 'sublime']
 

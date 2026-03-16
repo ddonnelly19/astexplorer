@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import cx from '../../utils/classnames.js';
+import cx from '../../utils/classnames';
 import {getTransformerByID} from '../../parsers';
 
 export default class TransformButton extends React.Component {
