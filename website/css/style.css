@@ -1,5 +1,6 @@
 @import "~codemirror/lib/codemirror.css";
 @import "~codemirror/addon/fold/foldgutter.css";
+@import "~monaco-editor/min/vs/editor/editor.main.css";
 @import "./highlight.css";
 @import "~font-awesome/css/font-awesome.css";
 @import "../fontcustom/fontcustom.css";
@@ -334,6 +335,26 @@ body {
   min-height: 0;
 }
 
+.editorShell {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.editorVimStatus {
+  flex: 0 0 auto;
+  min-height: 20px;
+  padding: 2px 8px;
+  border-top: 1px solid #ddd;
+  background-color: #efefef;
+  color: #555;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 16px;
+}
+
 li.entry {
   margin: 0;
   list-style: none;
@@ -342,6 +363,7 @@ li.entry {
 }
 
 .CodeMirror .marked,
+.monaco-editor .marked,
 .entry.highlighted {
   border-radius: 2px;
   background-color: rgba(255,240,6,0.4);
@@ -416,6 +438,19 @@ li.entry {
 
 .CodeMirror pre.errorMarker {
   background-color: #EB949433;
+}
+
+.monaco-editor .errorMarker {
+  background-color: #EB949433;
+}
+
+.editor .monaco-editor,
+.editor .monaco-editor .overflow-guard {
+  flex: 1;
+}
+
+.editor .monaco-editor .margin {
+  background-color: white;
 }
 
 /* Dialog */

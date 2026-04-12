@@ -1,54 +1,58 @@
 import Editor from './Editor';
 import JSCodeshiftEditor from './JSCodeshiftEditor';
 import PropTypes from 'prop-types';
-import {publish} from '../utils/pubsub';
+import { publish } from '../utils/pubsub';
 import * as React from 'react';
 import SplitPane from './SplitPane';
 import TransformOutput from './TransformOutput';
 import PrettierButton from './buttons/PrettierButton';
 
 function resize() {
-  publish('PANEL_RESIZE');
+	publish('PANEL_RESIZE');
 }
 
+/**
+ * @param {{ transformer: { id: string; }; transformCode: string; onContentChange; enableFormatting: boolean; keyMap: string; toggleFormatting; transformResult; mode: string; }} props
+ */
 export default function Transformer(props) {
-  const plainEditor = React.createElement(
-    props.transformer.id === 'jscodeshift' ? JSCodeshiftEditor : Editor,
-    {
-      highlight: false,
-      value: props.transformCode,
-      onContentChange: props.onContentChange,
-      enableFormatting: props.enableFormatting,
-      keyMap: props.keyMap,
-    },
-  );
+	const plainEditor = React.createElement(
+		props.transformer.id === 'jscodeshift' ? JSCodeshiftEditor : Editor,
+		{
+			highlight: false,
+			value: props.transformCode,
+			onContentChange: props.onContentChange,
+			enableFormatting: props.enableFormatting,
+			keyMap: props.keyMap,
+		},
+	);
 
-  const formattingEditor = (<div style={{flex: 1, minHeight: 0, minWidth: 0, position: 'relative', display: 'flex'}}>
-    <PrettierButton toggleFormatting={props.toggleFormatting} enableFormatting={props.enableFormatting}/>
-    {plainEditor}
-  </div>)
+	const formattingEditor = (<div style={{ flex: 1, minHeight: 0, minWidth: 0, position: 'relative', display: 'flex' }}>
+		<PrettierButton toggleFormatting={props.toggleFormatting} enableFormatting={props.enableFormatting} />
+		{plainEditor}
+	</div>)
 
-  return (
-    <SplitPane
-      className="splitpane"
-      onResize={resize}>
-      {formattingEditor}
-      <TransformOutput
-        transformResult={props.transformResult}
-        mode={props.mode}
-      />
-    </SplitPane>
-  );
+	return (
+		<SplitPane
+			className="splitpane"
+			onResize={resize}
+			vertical={undefined}>
+			{formattingEditor}
+			<TransformOutput
+				transformResult={props.transformResult}
+				mode={props.mode}
+			/>
+		</SplitPane>
+	);
 }
 
 Transformer.propTypes = {
-  defaultTransformCode: PropTypes.string,
-  transformCode: PropTypes.string,
-  transformer: PropTypes.object,
-  mode: PropTypes.string,
-  keyMap: PropTypes.string,
-  onContentChange: PropTypes.func,
-  toggleFormatting: PropTypes.func,
-  enableFormatting: PropTypes.bool,
-  transformResult: PropTypes.object,
+	defaultTransformCode: PropTypes.string,
+	transformCode: PropTypes.string,
+	transformer: PropTypes.object,
+	mode: PropTypes.string,
+	keyMap: PropTypes.string,
+	onContentChange: PropTypes.func,
+	toggleFormatting: PropTypes.func,
+	enableFormatting: PropTypes.bool,
+	transformResult: PropTypes.object,
 };

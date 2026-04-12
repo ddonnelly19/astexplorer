@@ -2,6 +2,7 @@ import isEqual from 'lodash.isequal';
 import {getParserByID, getTransformerByID} from '../parsers';
 
 type State = any;
+
 type Selector<T = any> = (state: State) => T;
 
 // Our selectors are not computationally expensive so we can just use this
